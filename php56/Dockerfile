@@ -24,7 +24,7 @@ RUN docker-php-ext-install mcrypt
 
 # Install composer
 ADD composer-install.sh /usr/local/bin/composer-install.sh
-RUN chmod +x /usr/local/bin/*
+RUN chmod +x /usr/local/bin/composer-install.sh
 RUN /usr/local/bin/composer-install.sh && mv composer.phar /usr/bin/composer
 
 # Install Git
@@ -47,5 +47,5 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
 RUN usermod -u 1000 www-data
 
 COPY bootstrap.sh /usr/local/bin/bootstrap.sh
-RUN chmod +x /usr/local/bin/docker-php-entrypoint
+RUN chmod +x /usr/local/bin/bootstrap.sh
 CMD ["bootstrap.sh"]
