@@ -24,7 +24,7 @@ RUN docker-php-ext-install mcrypt
 
 # Install composer
 ADD composer-install.sh /usr/local/bin/composer-install.sh
-RUN chmod +x /usr/local/bin/composer-install.sh
+RUN chmod +x /usr/local/bin/*
 RUN /usr/local/bin/composer-install.sh && mv composer.phar /usr/bin/composer
 
 # Install Git
