@@ -47,4 +47,5 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
 RUN usermod -u 1000 www-data
 
 COPY bootstrap.sh /usr/local/bin/bootstrap.sh
+RUN chmod +x /usr/local/bin/docker-php-entrypoint
 CMD ["bootstrap.sh"]
